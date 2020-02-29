@@ -83,7 +83,7 @@ def downloadit(url, picaddr):
             html = get_html(new_picaddr, ['Referer', new_url])
             if html == 0:
                 break
-            path = '下载路径（ps：文件夹路径，必须以/结尾）' + new_picaddr.split('/')[-1]
+            path = '下载路径（ps：文件夹路径，必须以/结尾）' + new_picaddr.split('/')[-1]  # 图片保存路径
             with open(path, 'wb') as f:
                 f.write(html)
                 print('第{}张图片已下载'.format(i+1))
@@ -98,7 +98,7 @@ def unpkl():
 
 
 def pkl(data):
-    with open('保存路径/mzitu.pkl', 'wb') as f:
+    with open('保存路径/mzitu.pkl', 'wb') as f:  # 数据保存路径
         pickle.dump(data, f)
         print('数据保存完成！')
 
